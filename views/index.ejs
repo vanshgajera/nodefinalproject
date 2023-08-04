@@ -1,0 +1,53 @@
+<style>
+    @import "https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css";
+</style>
+<% if(flash){ %>
+    <p style="color: chartreuse;"><%= flash.success %></p>
+<%} %>
+<form method="post" action="/insertdata"  enctype="multipart/form-data">
+    <table border="1">
+        <tr>    
+            <td>GRID</td>
+            <td><input type="text" name="grid"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="namee"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text" name="password"></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="text" name="phone"></td>
+        </tr>
+        <tr>
+            <td>Course</td>
+            <td>
+                <input type="checkbox" value="html" name="course">HTML
+                <input type="checkbox" value="css" name="course">CSS
+                <input type="checkbox" value="node_js" name="course">NODE_JS
+                <input type="checkbox" value="java" name="course">JAVA
+            </td>
+        </tr>
+        <tr>
+            <td>Fees :- </td>
+            <td><input type="text" name="fees"></td>
+        </tr>
+        <tr>
+            <td>File upload:- </td>
+            <td><input type="file" name="avatar"></td>
+        </tr>                                          
+        <tr>
+            <td></td>
+            <td><input type="submit" value="submit"></td>
+        </tr>
+    </table>
+</form>
+
+<a href="/view">view</a>

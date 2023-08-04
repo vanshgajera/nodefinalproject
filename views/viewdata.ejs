@@ -1,0 +1,39 @@
+<style>
+    @import "https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css";
+</style>
+<table border="1">
+    <tr>
+        <td>GRID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Phone</td>
+        <td>Course</td>
+        <td>Fees</td>
+        <td>Img</td>
+        <td>Action</td>
+    </tr>
+    <% alldata.map((val)=>{ %>
+
+        <tr>
+            <td><%= val.grid %></td>
+            <td><%= val.name %></td>
+            <td><%= val.email %></td>
+            <td><%= val.password %></td>
+            <td><%= val.phone %></td>
+            <td><%= val.course %></td>
+            <td><%= val.fees %></td>
+            <td>
+                <img src="<%= val.avatar %>" width="100">
+            </td>
+            <td>
+                <a href="/deleteData/<%= val.id %>">Delete</a>
+                <a href="/editData/<%= val.id %>">Edit</a>
+            </td>
+        </tr>
+        
+    <%}) %>
+
+</table>
+
+<a href="/">Add</a>

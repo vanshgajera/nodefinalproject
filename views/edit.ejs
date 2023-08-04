@@ -1,0 +1,52 @@
+<style>
+    @import "https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css";
+</style>
+<form method="post" action="/updateData" enctype="multipart/form-data">
+    <input type="hidden" name="editid" value="<%= single.id %>">
+    <table border="1">
+        <tr>
+            <td>GRID</td>
+            <td><input type="text" name="grid" value="<%= single.grid %>"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" value="<%= single.name %>"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" name="email" value="<%= single.email %>"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text" name="password" value="<%= single.password %>"></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="text" name="phone" value="<%= single.phone %>"></td>
+        </tr>
+        <tr>
+            <td>Course</td>
+            <td>
+                <input type="checkbox" value="html" <% if(single.course.includes("html")) { %> checked <%} %> name="course">HTML
+                <input type="checkbox" value="css" <% if(single.course.includes("css")) { %> checked <%} %> name="course">CSS
+                <input type="checkbox" value="node_js" <% if(single.course.includes("node_js")) { %> checked <%} %> name="course">NODE_JS
+                <input type="checkbox" value="java" <% if(single.course.includes("java")) { %> checked <%} %> name="course">JAVA
+            </td>
+        </tr>
+        <tr>
+            <td>Fees</td>
+            <td><input type="text" name="fees" value="<%= single.fees %>"></td>
+        </tr>
+        <tr>
+            <td>Img</td>
+            <td><input type="file" name="avatar"></td>
+            <td><img src="/<%= single.avatar %>" width="100" alt=""></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Edit"></td>
+        </tr>
+    </table>
+</form>
+
+<a href="/view">view</a>
